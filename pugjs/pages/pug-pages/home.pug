@@ -1,0 +1,128 @@
+//- Inherit all elements from header page
+extends ../../layout/header
+
+//- Add home page
+append header
+    //- Start banner section
+    .banner
+        .left
+            +icons(
+                1,
+                ["fa-solid fa-chevron-left"],
+                "",
+                ""
+            )
+        .right
+            +icons(
+                1,
+                ["fa-solid fa-chevron-right"],
+                "",
+                ""
+            )
+        div(class="banner-section " + container)
+            +bannerSections(
+                3,
+                [
+                    "eCommerce",
+                    "occaecat",
+                    "in voluptate"
+                ],
+                [
+                    "Tiny and Perfect eCommerce Template",
+                    "Aliquip ex ea commodo consequat",
+                    "Ullamco laboris nisi ut"
+                ],
+                [
+                    "Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1). This template is 100% free provided by TemplateMo website. Image credits go to Freepik Stories, Unsplash and Icons 8.",
+                    "You are permitted to use this Zay CSS template for your commercial websites. You are not permitted to re-distribute the template ZIP file in any kind of template collection websites.",
+                    "We bring you 100% free CSS templates for your websites. If you wish to support TemplateMo, please make a small contribution via PayPal or tell your friends about our website. Thank you."
+                ],
+                [
+                    "nayouf3o5 ",
+                    "Proident  ",
+                    "Repr "
+                ]
+            )
+        .indicators
+            +spans(3)
+    //- End banner section
+    //- Start categories section
+    div(class="categories " + container)
+        +mainTitle(
+            "Categories of The Month",
+            "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        )
+        .catgs
+            - for(let i = 1; i <= elements; i++)
+                .catg
+                    img(src=`../../../imgs/category_img_0${i}.jpg` alt="")
+                    - if (i === 1)
+                        span Watches
+                    - else if(i === 2)
+                        span Shoes
+                    - else
+                        span Accessories
+                    a(href="#") Go Shop
+    //- End categories section
+    //- Start Featured section
+    .featured
+        div(class=container)
+            +mainTitle(
+                "Featured Product",
+                "Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+            )
+            .boxes
+                - for(let i = 1; i <= elements; i++)
+                    .box
+                        img(src=`../../../imgs/feature_prod_0${i}.jpg` alt="")
+                        .info
+                            .rating-price
+                                div(class=rating)
+                                    - if(i === 1 || i === 2)
+                                        +icons(
+                                            5,
+                                            [
+                                                "fa-solid fa-star",
+                                                "fa-solid fa-star",
+                                                "fa-solid fa-star",
+                                                "fa-regular fa-star",
+                                                "fa-regular fa-star"
+                                            ],
+                                            "",
+                                            ""
+                                        )
+                                    - else
+                                        +icons(
+                                            5,
+                                            [
+                                                "fa-solid fa-star",
+                                                "fa-solid fa-star",
+                                                "fa-solid fa-star",
+                                                "fa-solid fa-star",
+                                                "fa-solid fa-star"
+                                            ],
+                                            "",
+                                            ""
+                                        )
+                                - if(i === 1)
+                                    .price $240.00
+                                - else if(i === 2)
+                                    .price $480.00
+                                - else
+                                    .price $360.00
+                            - if(i === 1)
+                                h3 Gym Weight
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
+                                span Reviews (24)
+                            - else if(i === 2)
+                                h3 Cloud Nike Shoes
+                                p Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.
+                                span Reviews (48)
+                            - else
+                                h3 Summer Addides Shoes
+                                p Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.
+                                span Reviews (74)
+    //- End Featured section
+    //- Start footer
+    include ../../layout/footer
+    //- End footer

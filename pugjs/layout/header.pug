@@ -1,0 +1,86 @@
+doctype
+//- Include mixins
+include ../helpers/mixins
+//- Include variables
+include ../helpers/variables
+html
+    head
+        //- Include head part
+        include ../components/head
+    body
+        block header
+            header
+                div(class="main-header " + container)
+                    .phone-email
+                        .email
+                            +icons(
+                                1,
+                                ["fa-solid fa-envelope"],
+                                "",
+                                ""
+                            )
+                            span info@company.com
+                        .phone
+                            +icons(
+                                1,
+                                ["fa-solid fa-phone-flip"],
+                                "",
+                                ""
+                            )
+                            span 010-020-0340
+                    .social-media
+                        +icons(
+                            4,
+                            [
+                                "fa-brands fa-facebook-f",
+                                "fa-brands fa-instagram",
+                                "fa-brands fa-twitter",
+                                "fa-brands fa-linkedin"
+                            ],
+                            "",
+                            ""
+                        )
+            .nav-section
+                div(class="navbar " + container)
+                    .logo nayouf3o5
+                    .menu
+                        +listsLinks(
+                                4,
+                                [
+                                    "Home",
+                                    "About",
+                                    "Shop",
+                                    "Contact"
+                                ],
+                                [
+                                    "home",
+                                    "about",
+                                    "shop",
+                                    "contact"
+                                ]
+                            )
+                    .profile-box
+                        +icons(
+                                4,
+                                [
+                                    "fa-solid fa-magnifying-glass",
+                                    "fa-solid fa-cart-plus",
+                                    "fa-solid fa-user",
+                                    "fa-solid fa-bars"
+                                ],
+                                [
+                                    "fa-solid fa-cart-plus",
+                                    "fa-solid fa-user"
+                                ],
+                                [
+                                    "7",
+                                    "+99"
+                                ]
+                            )
+            .search-page
+                div(class=container)
+                    .search-box
+                        span X
+                        .search
+                            input(type="text" placeholder="Search...")
+                            button(type="submit" class="fa-solid fa-magnifying-glass")

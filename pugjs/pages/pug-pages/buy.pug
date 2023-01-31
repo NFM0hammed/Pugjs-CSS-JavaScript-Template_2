@@ -1,0 +1,81 @@
+//- Inherit all elements from header page
+extends ../../layout/header
+
+//- Add buy page
+append header
+    .buy-section
+        div(class=container)
+            .show-product
+                .product-img
+                    img(src="../../../imgs/product_single_01.jpg" alt="")
+                    .more-imgs
+                        - for(let i = 1; i <= elements; i++)
+                            img(src=`../../../imgs/product_single_0${i}.jpg`, alt="")
+                .product-details
+                    h3 Active Wear
+                    span $25.00
+                    .details
+                        div(class="reviews " + rating)
+                            +icons(
+                                5,
+                                [
+                                    "fa-solid fa-star",
+                                    "fa-solid fa-star",
+                                    "fa-solid fa-star",
+                                    "fa-solid fa-star",
+                                    "fa-regular fa-star"
+                                ],
+                                "",
+                                ""
+                            )
+                            .review Rating 4.8 | 36 Comments
+                        h5 Brand: &nbsp; #[span Easy Wear]
+                        h5 Description:
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.
+                        h5 Avaliable Color: &nbsp; #[span White / Black]
+                        h5 Specification:
+                        +lists(
+                            7,
+                            [
+                                "Lorem ipsum dolor sit",
+                                "Amet, consectetur",
+                                "Adipiscing elit,set",
+                                "Duis aute irure",
+                                "Ut enim ad minim",
+                                "Dolore magna aliqua",
+                                "Excepteur sint"
+                            ]
+                        )
+                        .size-quns
+                            .size
+                                span Size:
+                                    - for(let i = 0; i < sizes.length; i++)
+                                        span= sizes[i]
+                            .quns
+                                span Quantity
+                                    - for(let i = 0; i < quns.length; i++)
+                                        - if(i === 1)
+                                            span(class="qun")= quns[i]
+                                        - else
+                                            span= quns[i]
+                        .buy-add-to-cart
+                            button Buy
+                            button Add To Cart
+    .related-products-section
+        div(class=container)
+            h3 Related Products
+            .products
+                +catgsBox(9)
+            .bullets
+                +icons(
+                    2,
+                    [
+                        "fa-solid fa-chevron-left",
+                        "fa-solid fa-chevron-right"
+                    ],
+                    "",
+                    ""
+                )
+    //- Start footer
+    include ../../layout/footer
+    //- End footer

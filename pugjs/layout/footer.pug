@@ -1,0 +1,72 @@
+footer
+    .container
+        .footer
+            .contact-us
+                h2(class="logo") nayouf3o5 Shop
+                .info
+                    i(class="fa-solid fa-location-dot")
+                        span 123 Consectetur at ligula 10660
+                    i(class="fa-solid fa-phone-flip")
+                        span 010-020-0340
+                    i(class="fa-solid fa-envelope")
+                        span info@company.com
+            .products
+                h2 Products
+                +listsLinks(
+                    7,
+                    [
+                        "Luxury",
+                        "Sport Wear",
+                        "Men's Shoes",
+                        "Women's Shoes",
+                        "Popular Dress",
+                        "Gym Accessories",
+                        "Sport Shoes"
+                    ],
+                    [
+                        "#",
+                        "#",
+                        "#",
+                        "#",
+                        "#",
+                        "#",
+                        "#"
+                    ]
+                )
+            .further-info
+                h2 Further Info
+                +listsLinks(
+                    5,
+                    [
+                        "Home",
+                        "About Us",
+                        "Shop Locations",
+                        "FAQs",
+                        "Contact"
+                    ],
+                    [
+                        "home",
+                        "about",
+                        "shop",
+                        "#",
+                        "contact",
+                    ]
+                )
+        .social-media-send-message
+            .social-media
+                +icons(
+                    4,
+                    [
+                        "fa-brands fa-facebook-f",
+                        "fa-brands fa-instagram",
+                        "fa-brands fa-twitter",
+                        "fa-brands fa-linkedin"
+                    ]
+                )
+            .send-message
+                input(type="email" placeholder="Email address")
+                input(type="submit" value="subscribe")
+    .designed-by
+        .container
+            p Copyright © 2023 Company Name | Designed by #[a(href="https://www.github.com/nayouf305") nayouf3o5]
+script(src="../../../js/main.js")

@@ -1,0 +1,10 @@
+//- All brands section
+.our-brands
+    div(class=container)
+        +mainTitle(
+            "Our Brands",
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet."
+        )
+        .brands
+            - for(let i = 1; i <= (elements + 1); i++)
+                img(src=`../../../imgs/brand_0${i}.png` alt="")

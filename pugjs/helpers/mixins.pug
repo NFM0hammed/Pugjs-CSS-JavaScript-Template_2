@@ -1,0 +1,100 @@
+//- Mixin for create ul li lists
+mixin lists(num, list)
+    ul
+        - for(let i = 0; i < num; i++)
+            li= list[i]
+
+//- ==================================================
+
+//- Mixin for create ul li lists + links
+mixin listsLinks(num, list, link)
+    ul
+        - for(let i = 0; i < num; i++)
+            a(href=link[i] + ".html") #[li= list[i]]
+
+//- ==================================================
+
+//- Mixin for create i icons
+    ==> Version number #01, Create only i icons <==
+    mixin icons(num, icon)
+        - for(let i = 0; i < num; i++)
+                i(class=icon[i])
+                
+//- ==> Version number #02, Create i icons + span inner icons <==
+mixin icons(num, icon, nameClass = "", val = "")
+    - for(let i = 0, j = 0; i < num; i++)
+        - if(icon[i] === nameClass[j])
+            i(class=icon[i])
+                span= val[j++]
+        - else
+            i(class=icon[i])
+
+//- ==================================================
+
+//- Mixin for create spans, Active class for the first element by default
+mixin spans(num)
+    - for(let i = 0; i < num; i++)
+        - if(i === 0)
+            span(class="active")
+        - else
+            span
+
+//- ==================================================
+
+//- Mixin for create catgs classification
+mixin createCatgs(name)
+    .catgs
+        .catg= name
+        i(class="fa-solid fa-circle-arrow-down down")
+
+//- ==================================================
+
+//- Mixin for create categories box
+mixin catgsBox(num)
+    - for(let i = num; i >= 1; i--)
+        .catg-box
+            .img
+                img(src=`../../../imgs/shop_${i}.jpg` alt="")
+                .buy
+                    a(href="../pug-pages/buy.html")
+                        i(class="fa-solid fa-heart")
+                    a(href="../pug-pages/buy.html")
+                        i(class="fa-solid fa-eye")
+                    a(href="../pug-pages/buy.html")
+                        i(class="fa-solid fa-cart-shopping")
+            .info
+                h3 Oupidatat non #[br] M/L/X/XL
+                div(class="stars " + rating)
+                    +icons(
+                        5,
+                        [
+                            "fa-solid fa-star",
+                            "fa-solid fa-star",
+                            "fa-solid fa-star",
+                            "fa-regular fa-star",
+                            "fa-regular fa-star"
+                        ],
+                        "",
+                        ""
+                    )
+                span $250.00
+
+//- ==================================================
+
+//- Mixin for create a component of main title
+mixin mainTitle(heading, paragraph)
+    .main-title
+        h3= heading
+        p= paragraph
+
+//- ==================================================
+
+//- Mixin for create banner sections
+    Loop to create multiple banner section [diffrent pics, h1, h3, p]
+mixin bannerSections(num, h1, h3, p, span)
+    - for(let i = 0; i < num; i++)
+        div(class="info childern")
+            h1 #[span= span[i]]#[=h1[i]]
+            h3= h3[i]
+            p= p[i]
+        img(class="childern" src=`../../../imgs/banner_img_0${i + 1}.jpg` alt="")

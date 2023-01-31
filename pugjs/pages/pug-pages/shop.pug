@@ -1,0 +1,65 @@
+//- Inherit all elements from header page
+extends ../../layout/header
+
+//- Add shop page
+append header
+    div(class=container)
+        .shop-section
+            .catgs-section
+                h3 Categories
+                +createCatgs("Gender")
+                +listsLinks(
+                    2,
+                    [
+                        "Men",
+                        "Women"
+                    ],
+                    [
+                        "#",
+                        "#",
+                    ]
+                )
+                +createCatgs("Sale")
+                +listsLinks(
+                    2,
+                    [
+                        "Sport",
+                        "Luxury"
+                    ],
+                    [
+                        "#",
+                        "#"
+                    ]
+                )
+                +createCatgs("Product")
+                +listsLinks(
+                    3,
+                    [
+                        "Bag",
+                        "Sweather",
+                        "Sunglass"
+                    ],
+                    [
+                        "#",
+                        "#",
+                        "#"
+                    ]
+                )
+            .show-catgs
+                .search-catgs
+                    h3 All Men's Women's
+                    input(type="text" placeholder="Featured")
+                .catgs-box
+                    +catgsBox(9)
+                .change-catgs
+                    - for(let i = 1; i <= elements; i++)
+                        - if(i === 1)
+                            span(class="active")= i
+                        - else
+                            span= i
+    //- Start brands section
+    include ../../components/brands
+    //- End brands section
+    //- Start footer
+    include ../../layout/footer
+    //- End footer

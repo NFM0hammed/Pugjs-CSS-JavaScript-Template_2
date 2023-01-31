@@ -1,0 +1,28 @@
+//- Inherit all elements from header page
+extends ../../layout/header
+
+//- Add contact page
+append header
+    .contact
+        div(class=container)
+            +mainTitle(
+                "Contact Us",
+                "Proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet."
+            )
+    div(class=container)
+        .form
+            .name-email
+                .name
+                    span Name
+                    input(type="text" placeholder="Name")
+                .email
+                    span Email
+                    input(type="email" placeholder="Email")
+            span Subject
+            input(type="text" placeholder="Subject")
+            span Message
+            textarea(placeholder="Message") 
+            button Let's Talk
+    //- Start footer
+    include ../../layout/footer
+    //- End footer

@@ -1,0 +1,39 @@
+//- Inherit all elements from header page
+extends ../../layout/header
+
+//- Add about page
+append header
+    .about
+        div(class=container)
+            .about-us
+                .info
+                    h3 About Us
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                img(src="../../../imgs/about-hero.svg" alt="")
+    .services
+        div(class=container)
+            +mainTitle(
+                "Our Services",
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet."
+            )
+            .boxes
+                - for(let i = 1; i <= (elements + 1); i++)
+                    .box
+                        - if(i === 1)
+                            i(class="fa-solid fa-truck")
+                            span Delivery Services
+                        - else if(i === 2)
+                            i(class="fa-solid fa-arrow-right-arrow-left")
+                            span Shipping & Return
+                        - else if(i === 3)
+                            i(class="fa-solid fa-percent")
+                            span Promotion
+                        - else
+                            i(class="fa-solid fa-user")
+                            span 24 Hours Service
+    //- Start brands section
+    include ../../components/brands
+    //- End brands section
+    //- Start footer
+    include ../../layout/footer
+    //- End footer
